@@ -5,8 +5,11 @@ function menuDisplay() {
     const menu = document.querySelector('.menu');
 
     menu.addEventListener('click', () => {
-        const nav = document.querySelector('.nav');
-        nav.classList.toggle('nav-active');
+        const header = document.querySelector('.header');
+        const main = document.querySelector('.main')
+        header.classList.toggle('active');
+        header.classList.contains('active') ? main.style.paddingTop = '71px' : main.style.paddingTop = '0px'
+        
     });
 }
 
