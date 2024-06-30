@@ -8,8 +8,9 @@
     <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
+    <div id="container">
+        <header class="header">
+            <div class="logo"><span>J</span>enny Ngama.</div>
             <div class="menu">
                 <div class="menu-open">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -18,74 +19,107 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </div>
             </div>
-            <ul>
-                <li>
-                    <a href="#">C'EST QUI ?</a>
-                </li>
-                <li>
-                    <a href="#">ELLE FAIT QUOI ?</a>
-                </li>
-                <li>
-                    <a href="#">CONTACTEZ</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="about">
-            <div class="profil">
-                <img src="./images/Jenny-profil.jpg" alt="photo de Jenny">
-            </div>
-            <div class="descript">
-                <h1 class="name"><span class="letter">J</span>enny Ngama.</h1>
-                <p>Une developpeuse web et Gestionnaire financière</p>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#">C'EST QUI ?</a>
+                    </li>
+                    <li>
+                        <a href="#">ELLE FAIT QUOI ?</a>
+                    </li>
+                    <li>
+                        <a href="#">CONTACTEZ</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="about">
+                <div class="profil">
+                    <img src="./images/Jenny-profil.jpg" alt="photo de Jenny">
+                </div>
+                <div class="descript">
+                    <h2>Une developpeuse web et Gestionnaire financière</h2>
+                    <p>Contribuer aux différents projets en mettant à profit mes compétences techniques en finances, comptabilité, en développement web et en gestion de projet.</p>
+                    <div class="action">
+                        <a href="./files/jenny-cv.pdf" target="_blank" class="voir" >voir le cv</a>
+                        <a href="./files/jenny-cv.pdf" download="jenny-cv.pdf" class="download">Télecharger le cv</a>
+                    </div>
+                </div>
+            </section>
+            <section class="statut">
+                <div class="statut__title">
+                    <div class="title-dev title-active">Developpeuse web et mobile</div>
+                    <div class="title-fin">Gestionnaire financière</div>
+                </div>
+                <div class="statut__content">
+                    <div class="dev">
+                        <p>
+                            Développeuse Web expérimentée avec une expertise en <strong>design</strong>, <strong>conception</strong> et <strong>développement</strong> de sites Web et d'applications Web.
+                        </p>
+                        <p>
+                            Maîtrise des technologies : HTML, CSS, JavaScript, React, Nodejs, express, Postsql, Figma, Wordpress, Git et Github.
+                        </p>
+                        <p>
+                            Je suis spécialisée dans la création de sites Web de haute qualité qui sont à la fois attrayants et fonctionnels. Je travaille en étroite collaboration avec mes clients pour comprendre leurs besoins et créer des solutions qui répondent à leurs attentes.
+                        </p>
+                        <p>
+                            J'ai une passion pour le développement web et je suis toujours à la recherche de nouveaux défis. Je suis une excellente communicatrice et je suis capable de travailler de manière indépendante ou en équipe.
+                          </p>
+                          <p>
+                            Je suis disponible pour des projets à temps plein, à temps partiel ou freelance.
+                          </p>
+        
+                    </div>
+                    <div class="fin">
+                        <p>
+                            Titulaire d'un diplôme en gestion financière, Je suis un gestionnaire financière avec une passion pour aider les entreprises à atteindre leurs objectifs financiers.
+                            Je maîtrise les dernières techniques et tendances en matière de gestion financière, et je suis toujours à la recherche de nouvelles façons d'améliorer mes services...
+                        </p>
+                        <p>
+                            Je travaille en étroite collaboration avec mes clients pour
+                            comprendre leurs besoins et leurs objectifs financiers. Je leur propose ensuite des solutions personnalisées qui répondent à leurs besoins spécifiques. Je suis également disponible pour fournir un soutien et une supervision continus après la mise en œuvre de la solution.
+                        </p>
+                    </div>
+                </div>
                 
-                <!-- <p>Gestionnaire financière et développeuse web et mobile, je suis passionnée par mon métier depuis le début de ma carrière en 2024.</p> <p>Polyvalente, je maîtrise les aspects financiers et techniques de mon domaine, ce qui me permet d'intervenir dans divers secteurs. Créative, motivée et curieuse, je suis toujours à l'affût de nouveaux défis.</p>
-                <p>En dehors de mon activité professionnelle, je suis également et coach</p> -->
-                
-            </div>
-        </section>
-        <section class="statut">
-            <div class="statut__title">
-                <div class="title-dev title-active">Developpeuse web et mobile</div>
-                <div class="title-fin">Gestionnaire financière</div>
-            </div>
-            <div class="statut__content">
-                <div class="dev">
-                    <p>
-                        Développeuse Web expérimentée avec une expertise en <strong>design</strong>, <strong>conception</strong> et <strong>développement</strong> de sites Web et d'applications Web.
-                        Maîtrise des technologies : HTML, CSS, JavaScript, React, Nodejs, express, Postsql, Figma, Wordpress, Git et Github.
-                    </p>
-                    <p>
-                        Je suis spécialisée dans la création de sites Web de haute qualité qui sont à la fois attrayants et fonctionnels. Je travaille en étroite collaboration avec mes clients pour comprendre leurs besoins et créer des solutions qui répondent à leurs attentes.
-                    </p>
-                    <p>
-                        J'ai une passion pour le développement web et je suis toujours à la recherche de nouveaux défis. Je suis une excellente communicatrice et je suis capable de travailler de manière indépendante ou en équipe.
-                      </p>
-                      <p>
-                        Je suis disponible pour des projets à temps plein, à temps partiel ou freelance.
-                      </p>
+                <div class="annonce-contact">
+                    Une question sur la faisabilité de votre projet ? N'hésitez pas à me contacter et nous étudierons ça ensemble !
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div>
+                <div class="moi">
+                    <h2>Jenny Ngama</h2>
+                    <p>Lubumbashi</p>
+                    <p>+243 890 261 338</p>
+                    <p>jennygama270319@gmail.com</p>
+                    <div>
+                        <a href="#">Linkedin</a>
+                        <a href="#">Github</a>
+                    </div>
+                    <a href="#">Télecharger mon cv</a>
+                </div>
+                <form class="contact" action="">
+                    <h2>Me CONTACTER</h2>
+                    <div>
+                        <label for="name">Nom/Prénom *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="Message">Message *</label>
+                        <textarea id="message" name="message" rows="5" cols="33" required></textarea>
     
-                </div>
-                <div class="fin">
-                    <p>
-                        Titulaire d'un diplôme en gestion financière, Je suis un gestionnaire financière avec une passion pour aider les entreprises à atteindre leurs objectifs financiers.
-                        Je maîtrise les dernières techniques et tendances en matière de gestion financière, et je suis toujours à la recherche de nouvelles façons d'améliorer mes services...
-                    </p>
-                    <p>
-                        Je travaille en étroite collaboration avec mes clients pour
-                        comprendre leurs besoins et leurs objectifs financiers. Je leur propose ensuite des solutions personnalisées qui répondent à leurs besoins spécifiques. Je suis également disponible pour fournir un soutien et une supervision continus après la mise en œuvre de la solution.
-                    </p>
-                </div>
+                    </div>
+                </form>
             </div>
-            
-            <div class="annonce-contact">
-                Une question sur la faisabilité de votre projet ? N'hésitez pas à me contacter et nous étudierons ça ensemble !
-            </div>
-        </section>
-    </main>
-    <footer>
-        Copyright 2023 Jenny Ngama
-    </footer>
+            <div>Copyright 2023 Jenny Ngama</div>
+        </footer>
+    </div>
 </body>
 </html>
