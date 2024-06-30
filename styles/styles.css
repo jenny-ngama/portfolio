@@ -42,6 +42,12 @@ a {
 input, textarea {
     min-height: 35px;
     width: 100%;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--secondColor);
+    border-radius: 5px;
 }
 
 /* HEADER */
@@ -215,15 +221,33 @@ input, textarea {
 
 
 /* FOOTER */
-
-/* .footer {
-    background-color: var(--secondColor);
-    padding: 20px;
+.footer {
+    padding: var(--minPadding);
+    border-top: 1px solid;
+}
+.moi {
+    text-align: center;
+}
+.moi h2 {
+    padding: 6px 0;
+}
+.moi * {
+    margin: 6px 0;
+}
+.moi .download {
+    display: inline-block;
+    padding: 7px;
+    margin-block: 12px;
 }
 .contact {
-    margin: 20px 0;
-    background-color: red;
+    margin-block: var(--minPadding);
 }
-.contact label {
-    display: block;
-} */
+.contact h2 {
+    margin-bottom: 12px;
+}
+.contact div {
+    margin-block: 6px;
+}
+.label {
+    margin-bottom: 5px;
+}
