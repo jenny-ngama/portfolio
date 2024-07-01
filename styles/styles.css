@@ -219,6 +219,72 @@ input, textarea {
     margin-block: 20px;
 }
 
+.toimoignages {
+    margin-block: var(--minPadding);
+}
+.temoignages-title {
+    text-align: center;
+    font-size: 24px;
+}
+.temoignages-content {
+    margin: 10px auto;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    animation: display-temoignages 12s infinite ease-in-out;
+}
+.temoignage {
+    flex-shrink: 0;
+    padding: var(--minPadding) 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.temoignage h3 {
+    width: 50%;
+    margin: 10px 0 0 auto;
+}
+@keyframes display-temoignages {
+    0%,
+    21.3% {
+        transform: translateX(0%);
+    }
+    33.3%,
+    54.6% {
+        transform: translateX(-100%);
+    }
+    66.6%,
+    87.9% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    background-color: var(--secondColor);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: #555;
+}
+
+.prev-button, .next-button {
+    margin: 0 10px;
+}
+
 
 /* FOOTER */
 .footer {
