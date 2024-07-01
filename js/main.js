@@ -37,3 +37,51 @@ function statutDiplay() {
         }
     })
 }
+
+
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const playPauseButton = document.querySelector('.play-pause-button');
+
+let currentSlide = 1;
+const slides = document.querySelectorAll('.temoignage');
+const slideWidth = slides[0].offsetWidth;
+
+carousel.style.transform = `translateX(-${(currentSlide - 1) * slideWidth}px)`;
+
+prevButton.addEventListener('click', () => {
+  goToSlide(currentSlide - 1);
+});
+
+nextButton.addEventListener('click', () => {
+  goToSlide(currentSlide + 1);
+});
+
+playPauseButton.addEventListener('click', () => {
+  togglePlayPause();
+});
+
+function goToSlide(newSlide) {
+  if (newSlide < 1) {
+    newSlide = slides.length;
+  } else if (newSlide > slides.length) {
+    newSlide = 1;
+  }
+
+  carousel.style.animation = 'none';
+  carousel.style.transform = `translateX(-${(newSlide - 1) * slideWidth}px)`;
+  currentSlide = newSlide;
+}
+
+function togglePlayPause() {
+  if (playPauseButton.classList.contains('desactive')) {
+    playPauseButton.classList.remove('desactive')
+    carousel.style.animation = 'auto';
+    playPauseButton.textContent = 'Démarrer le défilement';
+  } else {
+    playPauseButton.classList.add('desactive')
+    carousel.style.animation = 'none'
+    playPauseButton.textContent = 'Arrêter le défilement';
+  }
+}
