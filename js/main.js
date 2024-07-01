@@ -78,10 +78,10 @@ function togglePlayPause() {
   if (playPauseButton.classList.contains('desactive')) {
     playPauseButton.classList.remove('desactive')
     carousel.style.animation = 'auto';
-    playPauseButton.textContent = 'Démarrer le défilement';
+    playPauseButton.textContent = 'Stop';
   } else {
     playPauseButton.classList.add('desactive')
     carousel.style.animation = 'none'
-    playPauseButton.textContent = 'Arrêter le défilement';
+    playPauseButton.textContent = 'Play';
   }
 }

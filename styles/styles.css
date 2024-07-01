@@ -168,8 +168,14 @@ input, textarea {
 .download:hover {
     opacity: .8;
 }
+
+/* STATUT */
 .statut {
     padding-block: var(--minPadding);
+}
+.statut h2 {
+    font-size: 24px;
+    text-align: center;
 }
 .statut__title {
     display: flex;
@@ -219,8 +225,42 @@ input, textarea {
     margin-block: 20px;
 }
 
+/* MES PROJETS */
+.projets {
+    margin-block: var(--minPadding) 40px;
+}
+.projets-head {
+    font-size: 24px;
+    text-align: center;
+}
+.projets-content {
+    margin-block: var(--minPadding);
+}
+.projet {
+    position: relative;
+    width: 100%;
+    margin-block: var(--minPadding);
+}
+.projet img {
+    width: 100%;
+}
+.projet p {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    color: var(--whiteColor);
+    background-color: var(--transColor);
+    padding: 12px 8px;
+}
+
+/* TEMOIGNAGES*/
 .toimoignages {
     margin-block: var(--minPadding);
+    padding-block: var(--minPadding);
 }
 .temoignages-title {
     text-align: center;
