@@ -45,8 +45,7 @@ input, textarea {
     outline: none;
     padding: 5px;
     background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--secondColor);
+    border: 1px solid var(--secondColor);
     border-radius: 5px;
 }
 
@@ -54,7 +53,7 @@ input, textarea {
 .header{
    display: flex;
    justify-content: space-between;
-   
+   transition: all 0.6s ease;
 }
 .logo {
     font-style: italic;
@@ -77,7 +76,7 @@ input, textarea {
    top: 0;
    width: 100%;
    height: 100%;
-   background-color: var(--transColor);
+   background-color: var(--secondColor);
 }
 .menu {
     padding: var(--minPadding);
@@ -85,8 +84,11 @@ input, textarea {
 .menu:hover {
     cursor: pointer;
 }
-.menu svg {
+.menu-open svg {
     fill: var(--secondColor)
+}
+.menu-close svg {
+    fill: white;
 }
 .menu-close {
     display: none;
@@ -114,7 +116,6 @@ input, textarea {
 
 .nav a {
     color: white;
-    opacity: .9;
 }
 .active li {
     margin-block: 15px;
@@ -136,6 +137,7 @@ input, textarea {
     border-radius: 50%;
 }
 .descript h2 {
+    font-size: 18px;
     text-align: center;
     margin-bottom: var(--minPadding);
 }
@@ -145,13 +147,16 @@ input, textarea {
 .action {
    display: flex;
    flex-direction: column;
-   gap: 7px;
+   gap: 12px;
    margin-block: var(--minPadding);
 }
 .action a {
     text-align: center;
+    font-size: 18px;
     font-weight: 700;
-    padding: 5px;
+    padding: 7px;
+    box-shadow: 0px 3px 6px 0px #e1d9da;
+    border-radius: 5px;
 }
 .voir {
     color: var(--secondColor);
@@ -176,6 +181,7 @@ input, textarea {
 .statut h2 {
     font-size: 24px;
     text-align: center;
+    margin-block: 10px var(--minPadding);
 }
 .statut__title {
     display: flex;
@@ -185,22 +191,19 @@ input, textarea {
 }
 .statut__title div {
     text-align: center;
+    color: var(--secondColor);
+    box-shadow: 0px 3px 6px 0px var(--secondColor);
+    padding-block: 5px;
+    border-radius: 5px;
+    transition: all 0.4s ease;
 }
 .title-dev:hover, .title-fin:hover {
     cursor: pointer;
 }
-.statut__title div::after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 100%;
-    margin-top: 5px;
-}
-.title-active::after {
-    background-color: var(--secondColor);
-}
-.title-active {
-    color: var(--secondColor);
+
+div.title-active {
+    color: initial;
+    box-shadow: 0px 4px 6px 0px #e1d9da;
 }
 
 .statut p {
@@ -243,18 +246,21 @@ input, textarea {
 }
 .projet img {
     width: 100%;
+    border-radius: 5px;
 }
 .projet p {
     display: flex;
+    text-align: justify;
     align-items: center;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 6px;
     width: 100%;
     height: 40%;
     color: var(--whiteColor);
     background-color: var(--transColor);
     padding: 12px 8px;
+    border-radius: 5px;
 }
 
 /* TEMOIGNAGES*/
@@ -272,7 +278,7 @@ input, textarea {
 }
 .carousel {
     display: flex;
-    animation: display-temoignages 12s infinite ease-in-out;
+    animation: display-temoignages 15s infinite ease-in-out;
 }
 .temoignage {
     flex-shrink: 0;
@@ -282,20 +288,23 @@ input, textarea {
     margin: 0 auto;
 }
 .temoignage h3 {
-    width: 50%;
+    width: 65%;
     margin: 10px 0 0 auto;
+}
+.temoignage p {
+    text-align: justify;
 }
 @keyframes display-temoignages {
     0%,
-    21.3% {
+    28% {
         transform: translateX(0%);
     }
-    33.3%,
-    54.6% {
+    33%,
+    61% {
         transform: translateX(-100%);
     }
-    66.6%,
-    87.9% {
+    66%,
+    94% {
         transform: translateX(-200%);
     }
     100% {
@@ -314,7 +323,10 @@ input, textarea {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
+    box-shadow: 0px 2px 6px 1px rgb(151, 128, 128);
     transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .btn button:hover {
@@ -329,7 +341,6 @@ input, textarea {
 /* FOOTER */
 .footer {
     padding: var(--minPadding);
-    border-top: 1px solid;
 }
 .moi {
     text-align: center;
@@ -343,7 +354,23 @@ input, textarea {
 .moi .download {
     display: inline-block;
     padding: 7px;
-    margin-block: 12px;
+    margin-block: 0 12px;
+    box-shadow: 0px 3px 6px 0px #e1d9da;
+    border-radius: 5px;
+}
+.rs {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.rs img {
+    width: 32px;
+    height: 32px;
+}
+.rs .linkedin {
+    width: 36px;
+    height: 36px;
 }
 .contact {
     margin-block: var(--minPadding);
@@ -356,4 +383,7 @@ input, textarea {
 }
 .label {
     margin-bottom: 5px;
+}
+.Copyright {
+    font-weight: 700;
 }

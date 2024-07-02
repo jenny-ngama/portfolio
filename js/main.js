@@ -1,3 +1,5 @@
+const header = document.querySelector('.header');
+
 menuDisplay();
 statutDiplay();
 
@@ -5,13 +7,30 @@ function menuDisplay() {
     const menu = document.querySelector('.menu');
 
     menu.addEventListener('click', () => {
-        const header = document.querySelector('.header');
         const main = document.querySelector('.main')
         header.classList.toggle('active');
         header.classList.contains('active') ? main.style.paddingTop = '71px' : main.style.paddingTop = '0px'
         
+        if(header.classList.contains('active')) {
+          document.body.style.height = '100vh';
+          document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.height = 'auto';
+            document.body.style.overflow = 'auto';
+        }
     });
 }
+
+const links = document.querySelectorAll('.links li');
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    if(header.classList.contains('active')) {
+      document.body.style.height = 'auto';
+      document.body.style.overflow = 'auto';
+      header.classList.remove('active');
+    } 
+  })
+});
 
 function statutDiplay() {
     const statutDev = document.querySelector('.title-dev');
