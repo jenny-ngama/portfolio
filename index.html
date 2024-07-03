@@ -28,7 +28,10 @@
                         <a href="#projets">Mes projets</a>
                     </li>
                     <li>
-                        <a href="#temoignages">ce qu'ils disent de moi</a>
+                        <a href="#temoignages">
+                            <span class="large">ce qu'ils disent de moi</span>
+                            <span class="court">Temoignages</span>
+                        </a>
                     </li>
                     <li>
                         <a href="#contact">Contactez - moi</a>
@@ -39,7 +42,11 @@
         <main class="main">
             <section class="about">
                 <div class="profil">
-                    <img src="./images/Jenny-profil.jpg" alt="photo de Jenny">
+                    <img src="./images/Jenny-profil.jpg" alt="photo de Jenny" class="mobile">
+                    <div class="desktop">
+                        <img src="./images/Jenny-bg.jpg" alt="photo de jenny" class="img01">
+                        <img src="./images/jenny-bg01.png" alt="photo de jenny" class="img02">
+                    </div>
                 </div>
                 <div class="descript">
                     <h2>Une developpeuse web et Gestionnaire financière</h2>
@@ -147,7 +154,8 @@
         </main>
         <hr>
         <footer class="footer">
-            <div class="moi">
+            <div>
+                <div class="moi">
                 <h2 class="logo"><span>J</span>enny Ngama</h2>
                 <p>Lubumbashi</p>
                 <p>+243 890 261 338</p>
@@ -177,9 +185,12 @@
                     <textarea id="message" name="message" rows="5" cols="33" required></textarea>
 
                 </div>
+                <button type="button">Envoyer</button>
             </form>
+            </div>
             <div class="Copyright">Copyright 2024 @Jenny Ngama</div>
         </footer>
     </div>
+    <div class="message">la version desktop est encours de creation...</div>
 </body>
 </html>
