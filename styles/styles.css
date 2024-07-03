@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* VARIABLE */
 :root {
@@ -49,6 +49,21 @@ input, textarea {
     border-radius: 5px;
 }
 
+.message {
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    #container {
+        display: none;
+    }
+    .message {
+        display: block;
+        font-size: 22px;
+        font-weight: 500;
+    }
+}
+
+
 /* HEADER */
 .header{
    display: flex;
@@ -58,7 +73,8 @@ input, textarea {
 .logo {
     font-style: italic;
     font-weight: 700;
-    padding: var(--minPadding);
+    padding-block: var(--minPadding);
+    padding-left: var(--minPadding);
 }
 .logo span {
     font-family: "Nanum Brush Script", cursive;
@@ -115,12 +131,47 @@ input, textarea {
 }
 
 .nav a {
+    font-weight: 500;
     color: white;
 }
 .active li {
     margin-block: 15px;
 }
+.court {
+    display: none;
+}
 
+@media screen and (min-width: 640px) {
+    .header {
+        align-items: center;
+        background-color: #f8f9fa;
+    }
+    .menu {
+        display: none;
+    }
+    .nav {
+        display: block;
+    }
+    .nav ul {
+        display: flex;
+        gap: 12px;
+        padding-block: var(--minPadding);
+        padding-right: var(--minPadding);
+    }
+    .nav a {
+        font-size: 17px;
+        color: initial;
+    }
+    .nav a:hover {
+        color: var(--secondColor);
+    }
+    .large {
+        display: none;
+    }
+    .court {
+        display: block;
+    }
+}
 
 /* MAIN */
 .main {
@@ -135,6 +186,9 @@ input, textarea {
     width: 100%;
     object-fit: contain;
     border-radius: 50%;
+}
+.desktop {
+    display: none;
 }
 .descript h2 {
     font-size: 18px;
@@ -152,8 +206,8 @@ input, textarea {
 }
 .action a {
     text-align: center;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     padding: 7px;
     box-shadow: 0px 3px 6px 0px #e1d9da;
     border-radius: 5px;
@@ -174,6 +228,78 @@ input, textarea {
     opacity: .8;
 }
 
+@media screen and (min-width: 640px) {
+    .main {
+      padding: 0;  
+    }
+    .about {
+        position: relative;
+        width: 100%;
+        height: 320px;
+    }
+    .mobile {
+        display: none;
+    }
+    .profil {
+        width: 100%;
+        height: 420px;
+    }
+    .desktop {
+        display: flex;
+        width: 100%;
+        height: 320px;
+    }
+    .desktop img {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    .img01 {
+        display: none;
+    }
+    .desktop .img02 {
+        object-position: top;
+    }
+    .descript {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--whiteColor);
+        background-color: var(--transColor);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        border-radius: 7px;
+    }
+    .descript h2 {
+        display: none;
+    }
+    .descript p {
+        text-align: center;
+    }
+    .action {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .action a {
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--whiteColor);
+        width: 10rem;
+        padding: 5px;
+        box-shadow: none;
+    }
+    .voir {
+        border: 1px solid white;
+    }
+    .voir:hover {
+        color: black;
+        background-color: white;
+    }
+}
+
 /* STATUT */
 .statut {
     padding-block: var(--minPadding);
@@ -184,8 +310,9 @@ input, textarea {
     margin-block: 10px var(--minPadding);
 }
 .statut__title {
+    font-weight: 500;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     font-size: 18px;
 }
@@ -193,7 +320,7 @@ input, textarea {
     text-align: center;
     color: var(--secondColor);
     box-shadow: 0px 3px 6px 0px var(--secondColor);
-    padding-block: 5px;
+    padding: 7px;
     border-radius: 5px;
     transition: all 0.4s ease;
 }
@@ -226,6 +353,15 @@ div.title-active {
     line-height: 1.5;
     padding: 25px;
     margin-block: 20px;
+}
+
+@media screen and (min-width: 640px) {
+    .statut {
+        max-width: 800px;
+        background-image: url(../images/bg-icon-gray.jpg);
+        background-size: contain;
+        padding: 50px var(--minPadding);
+    }
 }
 
 /* MES PROJETS */
@@ -263,6 +399,22 @@ div.title-active {
     border-radius: 5px;
 }
 
+@media screen and (min-width: 640px) {
+    .projets {
+        
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px var(--minPadding);
+    }
+    .projets-content {
+        display: flex;
+        column-gap: 12px;
+    }
+.projet-3 {
+    display: none;
+}
+}
+
 /* TEMOIGNAGES*/
 .toimoignages {
     margin-block: var(--minPadding);
@@ -281,6 +433,7 @@ div.title-active {
     animation: display-temoignages 15s infinite ease-in-out;
 }
 .temoignage {
+    font-weight: 400;
     flex-shrink: 0;
     padding: var(--minPadding) 0;
     width: 100%;
@@ -288,6 +441,7 @@ div.title-active {
     margin: 0 auto;
 }
 .temoignage h3 {
+    font-weight: 500;
     width: 65%;
     margin: 10px 0 0 auto;
 }
@@ -337,6 +491,14 @@ div.title-active {
     margin: 0 10px;
 }
 
+@media screen and (min-width: 640px) {
+    .temoignages {
+        padding: 50px var(--minPadding);
+        margin: 0 auto;
+        background-image: url(../images/bg-icon-gray.jpg);
+        background-size: contain;
+    }
+}
 
 /* FOOTER */
 .footer {
@@ -384,6 +546,45 @@ div.title-active {
 .label {
     margin-bottom: 5px;
 }
+.footer button {
+    font-weight: 500;
+    color: var(--whiteColor);
+    background-color: var(--secondColor);
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+}
 .Copyright {
     font-weight: 700;
+}
+
+@media screen and (min-width: 640px) {
+    hr {
+        display: none;
+    }
+    .footer {
+        color: rgba(255, 255, 255, 0.911);
+        background: #11212d url(../images/bg_004.png) no-repeat 0 0;
+        background-size: auto 100%;
+    }
+    .footer > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        width: 85%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .moi {
+        width: 50%;
+    }
+    .footer .download {
+        box-shadow: none;
+    }
+    .contact {
+        width: 50%;
+    }
+    .contact h2 {
+        text-align: center;
+    }
 }
