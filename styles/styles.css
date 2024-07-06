@@ -247,6 +247,9 @@ input, textarea {
 .download:hover {
     opacity: .8;
 }
+.arrow {
+    display: none;
+}
 
 @media screen and (min-width: 640px) {
     .main {
@@ -254,51 +257,44 @@ input, textarea {
     }
     .about {
         position: relative;
-        height: 60vh;
         background-image: url(../images/bg_002.jpg);
         background-size: cover;
+        height: 410px;
     }
     .mobile {
         display: none;
     }
-    .profil {
-        width: 100%;
-        height: 420px;
-    }
     .desktop {
-        display: flex;
-        width: 100%;
-        height: 60vh;
-    }
-    .desktop img {
-        border-radius: 0;
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 7px;
     }
-    .img01 {
-        display: none;
+    .profil {
+        width: 100%;
+        height: 100%;
+        padding: 0;
     }
-    .img02 {
-        object-position: top;
+    .profil img {
+        border-radius: 0;
     }
     .descript {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: var(--whiteColor);
-        background-color: rgba(0, 0, 0, 0.26);
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        border-radius: 7px;
-        margin-inline: 2%;
-        padding: var(--minPadding);
+       position: absolute;
+       top: 0;
+       left: 0;
+       background-color: rgba(0, 0, 0, 0.459);
+       color: var(--whiteColor);
+       height: 100%;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: var(--minPadding);
     }
     .descript h2 {
-        display: none;
+        font-size: 24px;
+        margin-bottom: 35px;
     }
     .descript p {
         text-align: center;
@@ -327,40 +323,55 @@ input, textarea {
 }
 @media screen and (min-width: 768px) {
     .about {
-        position: relative;
-        height: 70vh;
-        padding-inline: var(--minPadding);
+        height: 95vh;
     }
-    .desktop {
-        display: flex;
-        width: 100%;
-        height: 70vh;
+    .profil img {
+        object-position: right;
+    }
+    .descript {
+       padding-inline: 10%;
+    }
+    .arrow {
+        display: block;
+        animation: down-more 3s ease-in
+         1s infinite alternate;
+    }
+    .arrow svg {
+        width: 80px;
+        height: 80px;
+    }
+    @keyframes down-more {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(50%);
+        }
     }
 }
 @media screen and (min-width: 1024px) {
     .about {
         display: flex;
         align-items: center;
-        height: 470px;
-        padding-inline: 10%;
+        gap: var(--minPadding);
+        height: auto;
+        min-height: 410px;
+        padding: var(--minPadding) 10%;
     }
     .profil {
         width: 50%;
         order: 2;
         height: auto;
-    } 
-    .desktop img {
+    }
+    .profil img {
         object-fit: contain;
-        object-position: center;
-        height: auto;
-        width: 100%;
     }
     .descript {
         position: relative;
         width: 50%;
-        padding: 0;
+        padding: var(--minPadding);
         color: black;
-        background-color: transparent;
+        background-color: initial;
     }
     .descript h2 {
         display: block;
@@ -377,6 +388,12 @@ input, textarea {
     .download {
         background-color: var(--redColor);
     }
+    .arrow {
+        display: none;
+    }
+}
+@media screen and (min-width: 1284px) {
+
 }
 
 /* STATUT */
@@ -435,6 +452,9 @@ div.title-active {
     line-height: 1.5;
     padding: 25px;
     margin-block: 20px;
+}
+.annonce-contact p {
+    text-align: center;
 }
 
 @media screen and (min-width: 640px) {
@@ -506,6 +526,11 @@ div.title-active {
         margin-inline: auto;
     }
 }
+@media screen and (min-width: 1284px) {
+    .annonce-contact {
+        max-width: 800px;
+    }
+}
 
 /* MES PROJETS */
 .projets {
@@ -521,10 +546,12 @@ div.title-active {
 .projet {
     position: relative;
     width: 100%;
-    margin-block: var(--minPadding);
+    max-width: 380px;
+    margin: var(--minPadding) auto;
 }
 .projet img {
     width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 .projet p {
@@ -533,13 +560,14 @@ div.title-active {
     align-items: center;
     position: absolute;
     left: 0;
-    bottom: 6px;
+    bottom: 0;
     width: 100%;
     height: 40%;
     color: var(--whiteColor);
     background-color: var(--transColor);
     padding: 12px 8px;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .more {
     text-align: center;
@@ -574,12 +602,15 @@ div.title-active {
     .projets {
         padding-inline: 5%;
     }
+    .projets-content {
+        gap: var(--minPadding);
+    }
+    
+}
+@media screen and (min-width: 850px) {
     .projet-3 {
         display: block;
     }
-}
-@media screen and (min-width: 820px) {
-
 }
 @media screen and (min-width: 1024px) {
     .projets {
@@ -685,8 +716,16 @@ button.play-pause-button {
     .temoignages-title {
         font-size: 24px;
     }
+    .temoignages-content {
+        max-width: 700px;
+    }
     .btn {
         gap: 16px;
+    }
+}
+@media screen and (min-width: 1284px) {
+    .temoignages-content {
+        max-width: 800px;
     }
 }
 
@@ -740,7 +779,7 @@ button.play-pause-button {
     font-weight: 500;
     color: var(--whiteColor);
     background-color: var(--secondColor);
-    padding: 5px 7px;
+    padding: 12px 7px;
     border: none;
     border-radius: 5px;
 }
@@ -782,6 +821,10 @@ button.play-pause-button {
     }
     .contact h2 {
         text-align: center;
+    }
+    .Copyright {
+        border-top: 1px solid;
+        padding-top: var(--minPadding);
     }
 }
 @media screen and (min-width: 1024px) {
