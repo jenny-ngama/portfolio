@@ -771,8 +771,11 @@ button.play-pause-button {
 .contact div {
     margin-block: 6px;
 }
-.label {
-    margin-bottom: 5px;
+.footer input {
+    margin-top: 5px;
+}
+.contact span {
+    color: red;
 }
 .footer button {
     font-weight: 500;
@@ -784,6 +787,7 @@ button.play-pause-button {
 }
 .footer button:hover {
     cursor: pointer;
+    opacity: .8;
 }
 .Copyright {
     font-weight: 700;
