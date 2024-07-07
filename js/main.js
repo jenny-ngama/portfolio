@@ -119,45 +119,81 @@ function sendMessage() {
   const email = document.querySelector('#email');
   const message = document.querySelector('#message');
 
+  name.addEventListener('input', () => document.querySelector('#name + .errorInput') && document.querySelector('#name + .errorInput').remove()
+  )
+  email.addEventListener('input', () => document.querySelector('#email + .errorInput') && document.querySelector('#email + .errorInput').remove()
+  )
+  message.addEventListener('input', () => document.querySelector('#message + .errorInput') && document.querySelector('#message +.errorInput').remove()
+  )
+
   form.addEventListener('submit', async(event) => {
-    try {
-      event.preventDefault();
-      displayMessage(form, 'load', 'Loading...', 'block')
+    event.preventDefault();
+    let isValid = true;
 
-      const data = {
-        name: name.value.trim(),
-        email: email.value.trim(),
-        message: message.value.trim()
+    if (name.value.trim() === '') {
+      errorInput(name, "Veuillez saisir votre nom")
+      isValid = false;
+    }
+
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (email.value.trim() === '' || !emailRegex.test(email.value.trim())) {
+      errorInput(email, 'Veuillez saisir une adresse email valide')
+      isValid = false;
+    }
+
+    if (message.value.trim() === '') {
+      errorInput(message, 'Veuillez saisir votre message')
+      isValid = false;
+    }
+
+    if(isValid) {
+      try {
+        displayMessage(form, 'load', 'Loading...', 'block')
+  
+        const data = {
+          name: name.value.trim(),
+          email: email.value.trim(),
+          message: message.value.trim()
+        }
+  
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+  
+        const response = await fetch('url', requestOptions);
+  
+        if (response.status === 200) {
+          displayMessage(form, 'success', 'Votre message a été envoyé avec succès', 'block');
+          name.value = '';
+          email.value = '';
+          message.value = '';
+        } else {
+            const message = await response.json();
+            return displayMessage(form, 'error', 'Votre message n\'a pas été envoyé suite à une erreur du serveur', 'block')
+        }
+  
+      } catch (error) {
+          console.error(error);
+          displayMessage(form, 'error', 'Erreur lors de l\'envoi de votre message, veuillez réessayer', 'block')
       }
-
-      const requestOptions = {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-      };
-
-      const response = await fetch('url', requestOptions);
-
-      if (response.status === 200) {
-        displayMessage(form, 'success', 'Votre message a été envoyé avec succès', 'block');
-        name.value = '';
-        email.value = '';
-        message.value = '';
-      } else {
-          const message = await response.json();
-          return displayMessage(form, 'error', 'Votre message n\'a pas été envoyé suite à une erreur du serveur', 'block')
-      }
-
-  } catch (error) {
-      console.error(error);
-      displayMessage(form, 'error', 'Erreur lors de l\'envoi de votre message, veuillez réessayer', 'block')
-  }
+    }
 
   })
 }
 
+// INFO ERREUR SAISIE
+function errorInput(element, message) {
+  const p = document.createElement('p');
+  p.textContent = message;
+  p.style.fontSize = '14px'
+  p.style.color = 'red';
+  p.classList.add('errorInput');
+  element.insertAdjacentElement("afterEnd", p)
+}
 
 // MESSAGE INFO
 function displayMessage(form, statusElement, message, display) {
