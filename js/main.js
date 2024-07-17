@@ -151,7 +151,7 @@ function sendMessage() {
         displayMessage(form, 'load', 'Loading...', 'block')
   
         const data = {
-          name: name.value.trim(),
+          nom: name.value.trim(),
           email: email.value.trim(),
           message: message.value.trim()
         }
@@ -164,7 +164,7 @@ function sendMessage() {
             body: JSON.stringify(data)
         };
   
-        const response = await fetch('url', requestOptions);
+        const response = await fetch('https://backend-portfolio-6odp.onrender.com/messages/receive', requestOptions);
   
         if (response.status === 200) {
           displayMessage(form, 'success', 'Votre message a été envoyé avec succès', 'block');
@@ -209,7 +209,7 @@ function displayMessage(form, statusElement, message, display) {
     p.textContent = message;
     p.style.display = display;
     p.style.textAlign = 'center';
-    div.style.color = statusElement === 'load' && '#0dcaf0' || statusElement === 'success' && "white" || statusElement === 'error' && 'white';
+    div.style.color = statusElement === 'load' && 'white' || statusElement === 'success' && "white" || statusElement === 'error' && 'white';
    
     bar1.style.transform = "rotate(45deg)";
     bar1.style.width = "3px";
