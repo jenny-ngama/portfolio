@@ -48,6 +48,9 @@ input, textarea {
     border: 1px solid var(--secondColor);
     border-radius: 5px;
 }
+input:focus, textarea:focus {
+    background-color: #e8f0fe;
+}
 
 /* HEADER */
 .header{
